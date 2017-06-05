@@ -1,14 +1,14 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/xenial64"
 
-  config.vm.network "forwarded_port", guest: 9000, host: 9000
+  # config.vm.network "forwarded_port", guest: 9000, host: 9000
 
   # host, gest
   # config.vm.synced_folder "synced_folder", "/synced_folder"
 
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
-    # vb.gui = true
+    vb.gui = true
 
     # Customize the amount of memory and CPU on the VM:
     vb.cpus = 2
