@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USER_NAME="ubuntu"
+USER_NAME="vagrant"
 
 sudo apt-get install -y unzip
 
