@@ -6,3 +6,4 @@ USER="vagrant"
 PASSWORD=$(perl -e 'print crypt("vagrant", "\$6\$");')
 
 sudo useradd -p ${PASSWORD} -m ${USER}
+sudo usermod -G sudo ${USER}
