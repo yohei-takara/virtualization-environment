@@ -1,0 +1,21 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/xenial64"
+
+  config.vm.provider "virtualbox" do |vb|
+    # Display the VirtualBox GUI when booting the machine
+    vb.gui = true
+
+    # Customize the amount of memory and CPU on the VM:
+    vb.cpus = 2
+    vb.memory = "2048"
+  end
+
+  config.vm.provision "shell" do |s|
+    s.inline = "timedatectl set-timezone Asia/Tokyo"
+    s.inline = "sudo apt-get update"
+  end
+
+  config.vm.provision "shell", path: "provision/user_add.sh"
+  config.vm.provision "shell", path: "provision/git.sh"
+  config.vm.provision "shell", path: "provision/ubuntu_desktop.sh"
+end
