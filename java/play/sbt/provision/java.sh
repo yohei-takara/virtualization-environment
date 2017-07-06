@@ -1,4 +1,7 @@
 #!/bin/bash
+set -Ceu
 
-# Install Open JDK 8
-sudo apt-get install -y openjdk-8-jdk
+USER="vagrant"
+USER_HOME="/home/${USER}/"
+
+su -l ${USER} -c "sdk install java"
