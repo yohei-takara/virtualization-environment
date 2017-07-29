@@ -3,11 +3,12 @@ set -Ceu
 
 USER="ocome"
 # password "vagrant" を SHA-512 でハッシュ化
-PASSWORD=$(perl -e 'print crypt("ocome", "\$6\$");')
+COMMAND='print crypt('"${USER}"', "\$6\$");'
+PASSWORD=$(perl -e "${COMMAND}")
 
 create_user(){
 
-  echo "${USER} is created."
+  echo "Create a user named ${USER}."
   # Create User
   sudo useradd -p ${PASSWORD} -m ${USER}
   # grant authrity
