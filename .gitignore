@@ -8,8 +8,7 @@ boxes/*
 build/
 /vagrant-spec.config.rb
 *.log
-synced_folder/*
-synced_folder/!*.gitkeep
+synced_folder/
 
 *.gem
 *.rbc
