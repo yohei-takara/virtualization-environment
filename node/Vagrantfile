@@ -24,7 +24,6 @@ Vagrant.configure("2") do |config|
     s.inline = "apt-get update"
   end
 
-  config.vm.provision "shell", path: "provision/useradd.sh"
   config.vm.provision "shell", path: "provision/git.sh"
   config.vm.provision "shell", path: "provision/node.sh"
 
